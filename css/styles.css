@@ -116,3 +116,13 @@ input {
     padding: 1rem 0;
     margin-top: 200;
 }
+
+label[for="book-status"] div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 5px;
+}
+
+.status-btn {
+    padding: 0.8rem;
+}

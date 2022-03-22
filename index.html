@@ -39,11 +39,15 @@
                 Author:
                 <input type="text" name="book-author-form" id="book-author-form" required>
             </label>
-            <label for="book-status-form">
-                Status:
-                <input type="text" name="book-status-form" id="book-status-form" required>
+            <label for="book-status">
+                Has this book been read?
+                <div>
+                    <input class="status-btn" type="button" name="book-status-form" id="book-status-form-yes" required value="YES">
+                    <input class="status-btn" type="button" name="book-status-form" id="book-status-form-no" required value="NO">
+                </div>
             </label>
-            <input class="submit-btn" type="submit" value="ADD" placeholder="ADD">
+
+            <input class="submit-btn" type="submit" value="ADD">
         </form>
     </div>
 
