@@ -14,14 +14,6 @@
     </header>
 
     <div class="books-container">
-        <div class="book-card">
-            <p class="book-title">Title: </p>
-            <p class="pages">Pages: </p>
-            <p class="author">Author: </p>
-            <p class="status">Status: </p>
-            <button class="edit-btn">Edit</button>
-            <button class="remove-btn">Remove</button>
-        </div>
     </div>
 
     <div class="pop-up-form">
@@ -33,7 +25,7 @@
             </label>
             <label for="book-pages-form">
                 Pages:
-                <input type="text" name="book-pages-form" id="book-pages-form" min="1" max="100000" title="Please Enter A Number From 1 - 100000" required>
+                <input type="number" name="book-pages-form" id="book-pages-form" min="1" max="10000" title="Please Enter A Number From 1 - 100000" required>
             </label>
             <label for="book-author-form">
                 Author:
@@ -47,7 +39,7 @@
                 </div>
             </label>
 
-            <input class="submit-btn" type="submit" value="ADD">
+            <button class="submit-btn" id="submit-form">ADD</button>
         </form>
     </div>
 

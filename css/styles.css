@@ -75,7 +75,7 @@ body {
 
 .pop-up-form {
     display: none;
-    position: absolute;
+    position: fixed;
     border-radius: 10px;
     border: 5px solid black;
     padding: 1rem;
@@ -126,3 +126,13 @@ label[for="book-status"] div{
 .status-btn {
     padding: 0.8rem;
 }
+
+#book-pages-form::-webkit-outer-spin-button,
+#book-pages-form::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+  }
