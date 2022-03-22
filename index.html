@@ -8,6 +8,43 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    
+    <header class="header">
+        <h1 class="library-title">Library</h1>
+        <button class="add-btn">+</button>
+    </header>
+
+    <div class="books-container">
+        <div class="book-card">
+            <p class="book-title">Title: </p>
+            <p class="pages">Pages: </p>
+            <p class="author">Author: </p>
+            <p class="status">Status: </p>
+            <button class="edit-btn">Edit</button>
+            <button class="remove-btn">Remove</button>
+        </div>
+    </div>
+
+    <div class="pop-up-form">
+        <form action="app.js">
+            <legend class="form-legend">ADD NEW BOOK</legend>
+            <label for="book-title-form">
+                Title:
+                <input type="text" name="book-title-form" id="book-title-form" required>
+            </label>
+            <label for="book-pages-form">
+                Pages:
+                <input type="text" name="book-pages-form" id="book-pages-form" min="1" max="100000" title="Please Enter A Number From 1 - 100000" required>
+            </label>
+            <label for="book-author-form">
+                Author:
+                <input type="text" name="book-author-form" id="book-author-form" required>
+            </label>
+            <label for="book-status-form">
+                Status:
+                <input type="text" name="book-status-form" id="book-status-form" required>
+            </label>
+            <input class="submit-btn" type="submit" value="ADD" placeholder="ADD">
+        </form>
+    </div>
 </body>
 </html>
