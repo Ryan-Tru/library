@@ -27,6 +27,7 @@ function addBookToLibrary() {
     book.author = document.getElementById('book-author-form').value;
     book.pages = document.getElementById('book-pages-form').value;
     book.read = readStatus;
+    book.inDOM = false;
 
     document.querySelector('form').reset();
     popUp.classList.remove('display-form');
@@ -36,26 +37,29 @@ function addBookToLibrary() {
 
 function appendBook() {
     for(let appendNum = 0; appendNum < myLibrary.length; appendNum++) {
-        let newDiv = document.createElement('div');
-        this.author = document.createElement('p');
-        this.author.innerText = `Author: ${myLibrary[appendNum].author}`;
+        if(myLibrary[appendNum].inDOM === false) {
+            myLibrary[appendNum].inDOM = true;
+            let newDiv = document.createElement('div');
+            this.author = document.createElement('p');
+            this.author.innerText = `Author: ${myLibrary[appendNum].author}`;
+            
+            this.pages = document.createElement('p');
+            this.pages.innerText = `Pages: ${myLibrary[appendNum].pages}`;
         
-        this.pages = document.createElement('p');
-        this.pages.innerText = `Pages: ${myLibrary[appendNum].pages}`;
-    
-        this.read = document.createElement('p');
-        this.read.innerText = `Read: ${myLibrary[appendNum].read}`;
-    
-        this.title = document.createElement('p');
-        this.title.innerText = `Title: ${myLibrary[appendNum].title}`;
-    
-        newDiv.classList.add('book-card');
-        newDiv.appendChild(title);
-        newDiv.appendChild(pages);
-        newDiv.appendChild(author);
-        newDiv.appendChild(read);
-    
-        bookContainer.appendChild(newDiv);
+            this.read = document.createElement('p');
+            this.read.innerText = `Read: ${myLibrary[appendNum].read}`;
+        
+            this.title = document.createElement('p');
+            this.title.innerText = `Title: ${myLibrary[appendNum].title}`;
+        
+            newDiv.classList.add('book-card');
+            newDiv.appendChild(title);
+            newDiv.appendChild(pages);
+            newDiv.appendChild(author);
+            newDiv.appendChild(read);
+        
+            bookContainer.appendChild(newDiv);
+        }
     }
 }
 
