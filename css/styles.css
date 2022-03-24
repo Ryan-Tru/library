@@ -68,7 +68,7 @@ body {
 }
 
 .book-card:hover {
-    border-left: #3933ac 12px solid;
+    border-left: #3933ac 10px solid;
 }
 
 /* Styling popup form */

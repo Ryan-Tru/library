@@ -4,6 +4,9 @@ const readBtnYes = document.querySelector('#book-status-form-yes');
 const readBtnNo = document.querySelector('#book-status-form-no');
 const submitForm = document.querySelector('#submit-form');
 const bookContainer = document.querySelector('.books-container');
+let removeButtons = document.querySelectorAll('.remove-btn');
+let readButtons = document.querySelectorAll('.read-btn');
+let bookCard = document.querySelectorAll('.book-card');
 
 let readStatus;
 
@@ -44,11 +47,15 @@ function appendBook() {
             let removeBtnCard = document.createElement('button');
             let readBtnCard = document.createElement('button');
 
+            newDiv.setAttribute('bookNumber', appendNum);
+
             removeBtnCard.innerText = 'Remove';
             removeBtnCard.classList.add('remove-btn');
-            removeBtnCard.setAttribute('number', appendNum);
+            removeBtnCard.setAttribute('removeNumber', appendNum);
 
             readBtnCard.innerText = 'Read Status';
+            readBtnCard.classList.add('read-btn');
+            readBtnCard.setAttribute('readNumber', appendNum);
 
             this.author = document.createElement('p');
             this.author.innerText = `Author: ${myLibrary[appendNum].author}`;
@@ -82,8 +89,17 @@ document.addEventListener('DOMContentLoaded', () => {
         addBookToLibrary();
         appendBook();
         readStatus = undefined;
+        removeButtons = document.querySelectorAll('.remove-btn');
+        readButtons = document.querySelectorAll('.read-btn');
+        bookCard = document.querySelectorAll('.book-card');
     });
 });
+
+function removeElement() {
+}
+
+function readElement() {
+}
 
 //opens the form pop up when clicked
 addBtn.addEventListener('click', () => {
