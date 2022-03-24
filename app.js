@@ -35,11 +35,21 @@ function addBookToLibrary() {
     myLibrary.push(book);
 }
 
+//appends book to library
 function appendBook() {
     for(let appendNum = 0; appendNum < myLibrary.length; appendNum++) {
         if(myLibrary[appendNum].inDOM === false) {
             myLibrary[appendNum].inDOM = true;
             let newDiv = document.createElement('div');
+            let removeBtnCard = document.createElement('button');
+            let readBtnCard = document.createElement('button');
+
+            removeBtnCard.innerText = 'Remove';
+            removeBtnCard.classList.add('remove-btn');
+            removeBtnCard.setAttribute('number', appendNum);
+
+            readBtnCard.innerText = 'Read Status';
+
             this.author = document.createElement('p');
             this.author.innerText = `Author: ${myLibrary[appendNum].author}`;
             
@@ -57,6 +67,8 @@ function appendBook() {
             newDiv.appendChild(pages);
             newDiv.appendChild(author);
             newDiv.appendChild(read);
+            newDiv.appendChild(readBtnCard);
+            newDiv.appendChild(removeBtnCard);
         
             bookContainer.appendChild(newDiv);
         }
