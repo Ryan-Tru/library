@@ -57,7 +57,7 @@ body {
 .book-card {
     background-color: white;
     height: 200px;
-    width: 400px;
+    width: 90%;
     padding: 2rem;
     border-radius: 10px;
     border-left: #4f46e5 10px solid;
