@@ -92,10 +92,23 @@ document.addEventListener('DOMContentLoaded', () => {
         removeButtons = document.querySelectorAll('.remove-btn');
         readButtons = document.querySelectorAll('.read-btn');
         bookCard = document.querySelectorAll('.book-card');
+        console.log(removeButtons)
+        removeElement();
     });
 });
 
 function removeElement() {
+    removeButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            let number = button.getAttribute('removenumber');
+            bookCard.forEach(book => {
+                if(book.getAttribute('booknumber') == number) {
+                    book.remove(book.innerHTML);
+                }
+            });
+            
+        });
+    });
 }
 
 function readElement() {
