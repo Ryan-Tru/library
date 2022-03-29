@@ -135,4 +135,9 @@ label[for="book-status"] div{
 
 input[type=number] {
     -moz-appearance: textfield;
-  }
+}
+
+.read-status {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}

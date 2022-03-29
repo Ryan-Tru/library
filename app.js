@@ -64,7 +64,9 @@ function appendBook() {
             this.pages.innerText = `Pages: ${myLibrary[appendNum].pages}`;
         
             this.read = document.createElement('p');
+            this.read.classList.add('read-status');
             this.read.innerText = `Read: ${myLibrary[appendNum].read}`;
+
         
             this.title = document.createElement('p');
             this.title.innerText = `Title: ${myLibrary[appendNum].title}`;
@@ -92,8 +94,8 @@ document.addEventListener('DOMContentLoaded', () => {
         removeButtons = document.querySelectorAll('.remove-btn');
         readButtons = document.querySelectorAll('.read-btn');
         bookCard = document.querySelectorAll('.book-card');
-        console.log(removeButtons)
         removeElement();
+        readElement();
     });
 });
 
@@ -105,13 +107,32 @@ function removeElement() {
                 if(book.getAttribute('booknumber') == number) {
                     book.remove(book.innerHTML);
                 }
-            });
-            
+            });  
         });
     });
 }
 
 function readElement() {
+    readButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            let number = button.getAttribute('readnumber');
+            bookCard.forEach(book => {
+                if(book.getAttribute('booknumber') == number) {
+                    // if(myLibrary[number].read == 'Yes') {
+                    //     myLibrary[number].read = 'No';
+                    //     let read = book.classList('read-status');
+                    //     console.log(read)
+                    //     read.innerHTML = `Read: ${myLibrary[number].read}`
+                    //     book.appendChild(read);
+                    // }  else if(myLibrary[number].read == 'No') {
+                    //      myLibrary[number].read = 'Yes';
+                    //      read.innerHTML = `Read: ${myLibrary[number].read}`
+                    //      book.appendChild(read);
+                    // }
+                }
+            });
+        });
+    });
 }
 
 //opens the form pop up when clicked
